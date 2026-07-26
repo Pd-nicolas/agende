@@ -1,4 +1,4 @@
-package com.agende.agende_api;
+package com.agende.agendeapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
