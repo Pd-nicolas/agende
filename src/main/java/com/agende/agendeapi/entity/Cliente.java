@@ -3,7 +3,8 @@ package com.agende.agendeapi.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Audited;
+import org.hibernate.envers.Audited;
+
 
 @Entity
 @Table(name = "cliente")
