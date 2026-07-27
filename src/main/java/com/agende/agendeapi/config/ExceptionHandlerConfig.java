@@ -23,7 +23,7 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 public class ExceptionHandlerConfig {
 
     @ExceptionHandler(RuntimeException.class)
-    protected ResponseEntity<ErrorDTO> handlePlanMobException(RuntimeException ex) {
+    protected ResponseEntity<ErrorDTO> handleAgendeException(RuntimeException ex) {
         HttpStatus status = BAD_REQUEST;
         ErrorDTO defaultErrorDTO = this.buildDefaultErrorRet(ex.getMessage(), ex, status.value());
 

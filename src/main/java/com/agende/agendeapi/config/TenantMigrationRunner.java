@@ -1,6 +1,6 @@
 package com.agende.agendeapi.config;
 
-import br.com.planmobapi.service.TenantService;
+import com.agende.agendeapi.service.TenantService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;

@@ -13,16 +13,11 @@ import java.util.Optional;
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     boolean existsBySchema(String schema);
 
-
     Optional<Cliente> findBySchema(String schema);
 
-    @Query("""
-    SELECT DISTINCT c FROM Cliente c
-    WHERE (
-        :filtro IS NULL OR
-        LOWER(c.nome) LIKE LOWER(CONCAT('%', :filtro, '%'))
-    )
-    """)
+    @Query("SELECT DISTINCT c FROM Cliente c " +
+           "WHERE (:filtro IS NULL OR " +
+           "LOWER(c.nome) LIKE LOWER(CONCAT('%', :filtro, '%')))")
     Page<Cliente> findClientesFiltrados(
             @Param("filtro") String filtro,
             Pageable pageable

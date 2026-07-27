@@ -4,7 +4,6 @@ import jakarta.transaction.Transactional;
 import org.flywaydb.core.Flyway;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
@@ -16,14 +15,15 @@ import java.sql.Statement;
 @Service
 public class TenantService {
 
-    @Autowired
-    private DataSource dataSource;
-
-//    @Lazy
-//    @Autowired
-//    private ClienteService clienteService;
-
     private static final Logger logger = LoggerFactory.getLogger(TenantService.class);
+
+    private final DataSource dataSource;
+    private final ClienteService clienteService;
+
+    public TenantService(DataSource dataSource, @Lazy ClienteService clienteService) {
+        this.dataSource = dataSource;
+        this.clienteService = clienteService;
+    }
 
     private void createSchema(String schemaName) {
         try (Connection c = dataSource.getConnection();

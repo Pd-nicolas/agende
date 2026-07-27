@@ -1,6 +1,6 @@
 package com.agende.agendeapi.config;
 
-import br.com.planmobapi.hibernate.TenantInterceptor;
+import com.agende.agendeapi.hibernate.TenantInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
